@@ -1,0 +1,14 @@
+{% extends "/layouts/layout.html" %} {% block content %}
+<div class="container">
+    <div class="box_card_small_template">
+        <div class="text-center">
+            <br/>
+            <h1 class="title_no_underline text-center"><img src="{{ url_for('static', filename='images/gear.png') }}" alt="Clock" height="48" width="48" style="position: relative; top:-5px; left: -10px;">My Tableau Extensions</h1>
+            <h1 class="title_no_underline text-center">Oops - 403</h1>
+            <br/>
+            <h4 class="cols-sm-2 control-label">Your session timed out.<br/> - Or - <br/>The page or resource you were trying to access is forbidden!</h4>
+            <br/> <a class="btn bt-login text-center" href="{{ url_for('home') }}" style="width:200px;">Return to Home</a>
+            <br/>
+            <br/> </div>
+    </div>
+</div> {% endblock %}

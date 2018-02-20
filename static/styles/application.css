@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Pacifico';
+    src: url('/static/fonts/Pacifico-webfont.eot');
+    src: url('/static/fonts/Pacifico-webfont.woff') format('woff'), url('/static/fonts/Pacifico-webfont.ttf') format('truetype'), url('/static/fontsPacifico-webfont.svg#webfont') format('svg');
+}
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('/static/fonts/fontawesome-webfont.eot?v=4.6.3');
+    src: url('/static/fonts/fontawesome-webfont.woff2?v=4.6.3') format('woff2'), url('/static/fonts/fontawesome-webfont.woff?v=4.6.3') format('woff'), url('/static/fonts/fontawesome-webfont.ttf?v=4.6.3') format('truetype'), url('/static/fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('/static/fonts/CenturyGothic.ttf?') format('truetype');
+    font-weight: normal;
+    font-style: normal
+}

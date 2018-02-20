@@ -1,0 +1,607 @@
+/** hero-large.jpg **/
+
+body {
+    background: url('/static/images/ldscp_pattern.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div {
+    font-family: 'Century Gothic';
+}
+
+p {
+    font-family: 'Century Gothic';
+    color: #fff;
+}
+.tt-suggestion:hover {
+    background-color: #1E90FF;
+    color: white;
+    cursor: pointer;
+}
+
+.wdc_dropdown {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #aaa;
+    text-align: left;
+    white-space: nowrap;
+    line-height: 34px;
+    color: #444;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
+}
+
+.grow_inner {
+    height: 25px;
+    transition: height 2s;
+    -webkit-transition: height 2s;
+}
+
+.grow_inner_medium {
+    height: 50px;
+    transition: height 2s;
+    -webkit-transition: height 2s;
+}
+
+.grow_inner:hover {
+    height: 120px;
+}
+
+.grow_inner_medium:hover {
+    height: 145px;
+}
+
+.login-form {
+    background: url('/static/images/bgt.png') repeat scroll 0 0 rgba(0, 0, 0, 0);
+    width: 335px;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 9px;
+}
+
+.title {
+    font-family: 'Pacifico';
+    text-decoration: underline;
+}
+
+.title_no_underline {
+    font-family: 'Pacifico';
+}
+
+.sub_title_no_underline {
+    font-family: 'Pacifico';
+    font-size: 24px;
+}
+
+.standard_text {
+    font-family: 'Pacifico';
+    font-size: 14px;
+}
+
+.form-footer {
+    padding: 15px 40px;
+}
+
+.big-checkbox {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+    position: relative;
+    *overflow: hidden;
+}
+
+.bt-login {
+    background-color: #ff8627;
+    color: #ffffff;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    transition: background-color 300ms linear 0s;
+}
+
+.btn-login_small {
+    background-color: #ff8627;
+    color: #ffffff;
+    transition: background-color 300ms linear 0s;
+}
+
+/* The switch - the box around the slider */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 30px;
+}
+
+
+/* Hide default HTML checkbox */
+
+.switch input {
+    display: none;
+}
+
+
+/* The slider */
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #ff8627;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #ff8627;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(22px);
+    -ms-transform: translateX(22px);
+    transform: translateX(22px);
+}
+
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 30px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 30px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+i {
+    margin-right: 4%;
+    color: #555555
+}
+
+a {
+    text-decoration: none;
+    color: #555555;
+}
+
+.box_card {
+    width: auto;
+    margin: 15% auto;
+    height: auto;
+    border-radius: 9px;
+    padding: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.box_card_small {
+    width: 400px;
+    margin: 15% auto;
+    height: auto;
+    border-radius: 9px;
+    padding: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.box_card_small_template {
+    background: url('/static/images/bgt.png') repeat scroll 0 0 rgba(0, 0, 0, 0);
+    width: 335px;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 9px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.box_body {
+    background-color: #ffffff;
+    color: black;
+    padding: 0px;
+    padding-bottom: 15px;
+}
+
+.box_body_footer {
+    background-color: #ffffff;
+    background-color: #ffffff;
+    color: black;
+    padding: 0px;
+    border-bottom-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+    padding-bottom: 15px;
+}
+
+@media (min-width: 320px) and (max-width: 1023px) {
+    body {
+        background: url('/static/images/ldscp_pattern.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-color: #fff;
+    }
+}
+
+
+/** hero-medium.jpg **/
+
+@media (min-width: 1024px) and (max-width: 1360px) {
+    body {
+        background: url('/static/images/ldscp_pattern.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-color: #fff;
+    }
+}
+
+
+/** hero-large.jpg **/
+
+@media (min-width: 1361px) and (max-width: 1960px) {
+    body {
+        background: url('/static/images/ldscp_pattern.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-color: #fff;
+    }
+}
+
+.has-error {
+    color: #ff0000 !important;
+}
+
+.has-success {
+    color: #78b310 !important;
+}
+
+.has-error input {
+    border: 1px solid red !important;
+}
+
+.has-success input {
+    border: 1px solid #78b310 !important;
+}
+
+.message_success {
+    background-color: #78b310;
+    color: #fff;
+    padding: 5px;
+}
+
+.message_error {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 5px;
+}
+
+
+/** Badges **/
+
+.py_badge {
+    position: relative;
+    top: -7px;
+    font-size: 11px !important;
+    font-weight: 300;
+    text-align: center;
+    background-color: #e02222;
+    color: white;
+    height: 18px;
+    padding: 3px 6px 3px 6px;
+    margin: 3px 7px 3px 3px;
+    -webkit-border-radius: 2px !important;
+    -moz-border-radius: 2px !important;
+    border-radius: 2px !important;
+    text-shadow: none !important;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.py_badge_large {
+    position: relative;
+    top: 0px;
+    font-size: 15px !important;
+    font-weight: 300;
+    text-align: center;
+    background-color: #e02222;
+    color: white;
+    height: 22px;
+    padding: 3px 6px 3px 6px;
+    margin: 3px 3px 3px 3px;
+    -webkit-border-radius: 2px !important;
+    -moz-border-radius: 2px !important;
+    border-radius: 2px !important;
+    text-shadow: none !important;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.py_badge-default,
+.label-default {
+    background-color: #ff8627 !important;
+}
+
+.py_badge-primary,
+.label-primary {
+    background-color: #428bca !important;
+}
+
+.label-success,
+.py_badge-success {
+    background-color: #45b6af;
+    background-image: none !important;
+}
+
+.label-warning,
+.py_badge-warning {
+    background-color: #ecbc29;
+    background-image: none !important;
+}
+
+.label-danger,
+.py_badge-danger {
+    background-color: #f3565d;
+    background-image: none !important;
+}
+
+.label-info,
+.py_badge-info {
+    background-color: #89c4f4;
+    background-image: none !important;
+}
+
+.py_menu_bar,
+.py_menu_bar:hover {
+    color: black;
+    text-decoration: none;
+    font: 20px;
+}
+
+
+/** Styles for Responsive Tables **/
+
+
+/* Variables
+================================== */
+
+
+/* Tables
+================================== */
+
+.Rtable {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 0 3em 0;
+    padding: 0;
+}
+
+.Rtable-cell {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.8em 1.2em;
+    overflow: hidden;
+    list-style: none;
+    border: solid 3px white;
+    font-family: "Century Gothic";
+    background: rgba(112, 128, 144, 0.2);
+    border-radius: 9px;
+}
+
+.Rtable-cell > h1,
+.Rtable-cell > h2,
+.Rtable-cell > h3,
+.Rtable-cell > h4,
+.Rtable-cell > h5,
+.Rtable-cell > h6 {
+    margin: 0;
+}
+
+
+/* Table column sizing
+================================== */
+
+.Rtable--2cols > .Rtable-cell {
+    width: 50%;
+}
+
+.Rtable--3cols > .Rtable-cell {
+    width: 33.33%;
+}
+
+.Rtable--4cols > .Rtable-cell {
+    width: 25%;
+}
+
+.Rtable--5cols > .Rtable-cell {
+    width: 20%;
+}
+
+.Rtable--6cols > .Rtable-cell {
+    width: 16.6%;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Dropdown Button */
+
+.drop_button {
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: -120px;
+    top: 30px;
+    background-color: #ffffff;
+    width: 170px;
+    border-radius: 9px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 1;
+}
+
+
+/* Links inside the dropdown */
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+/* Change color of dropdown links on hover */
+
+.dropdown-content a:hover {
+    color: #ff8627;
+    font-weight: 300;
+}
+
+
+/** Calendar Style **/
+
+.date {
+    display: inline-block;
+    width: 50px;
+    height: 60px;
+    background: #fff;
+    text-align: center;
+    font-family: 'Helvetica', sans-serif;
+    position: relative;
+    margin: 5px 2px 5px 2px;
+}
+
+.date .month {
+    background: #ff8627;
+    display: block;
+    padding: 4px 0;
+    border-radius: 9px 9px 0px 0px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.date .day {
+    display: block;
+    margin: 0;
+    padding: 5px 0;
+    font-size: 24px;
+    box-shadow: 0 0 3px #ccc;
+    border: 1px solid #ccc;
+    position: relative;
+    border-radius: 0px 0px 9px 9px;
+}
+
+.week_container {
+    text-align: center;
+}
+
+.tile_count .tile_stats_count,
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.count_top
+{
+    text-align: center;
+}
+
+.count
+{
+    text-align: center;
+    font-size: 40px;
+}
+
+.tile_splitter {
+    height: 65px;
+    border-right: 2px solid #ff8627;
+    margin-top: 10px
+}
+
