@@ -12,10 +12,10 @@ The idea for an Amazon Product Search extension came from talking with a person 
 
 ![Image of Amazon Product Search Extension](https://raw.githubusercontent.com/hutchijo/my_tableau_extensions/master/static/images/readme1.png)
 
-This extension has ** two ** elements of integration:  
+This extension has **two** elements of integration:  
 
-* The ** first element of integration ** allows you to click on a selected mark and the selection will be added to the search input.  This is taking a selected mark out of Tableau and passing it over to the extension code which is external to Tableau.  
+* The **first element of integration** allows you to click on a selected mark and the selection will be added to the search input.  This is taking a selected mark out of Tableau and passing it over to the extension code which is external to Tableau.  
 
-* The ** second element of integration ** allows you to refresh the Tableau worksheet with the products after a purchase.  In this step when a user selects *"Buy Now"* there is writeback logic which inserts the purchase into a MySQL database table.  When the writeback has been completed the extension code triggers a refresh of the underlying datasource for the Worksheet. 
+* The **second element of integration** allows you to refresh the Tableau worksheet with the products after a purchase.  In this step when a user selects *"Buy Now"* there is writeback logic which inserts the purchase into a MySQL database table.  When the writeback has been completed the extension code triggers a refresh of the underlying datasource for the Worksheet. 
 
-![Image of Amazon Product Search Extension Animated](https://raw.githubusercontent.com/hutchijo/my_tableau_extensions/master/static/images/readme2.png)
+![Image of Amazon Product Search Extension Animated](https://raw.githubusercontent.com/hutchijo/my_tableau_extensions/master/static/images/readme2.gif)
