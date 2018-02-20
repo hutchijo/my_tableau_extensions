@@ -38,9 +38,9 @@ pip is already installed if you're using Python 2 >=2.7.9 or Python 3 >=3.4 bina
     
 With Python installed see the instructions on the [Flask](http://flask.pocoo.org/) site for install or simply run:
 
-    ```
-    $ pip install Flask
-    ```
+```
+$ pip install Flask
+```
     
 ### Install the Python Wrapper for the Amazon Product Advertising API 
 
@@ -49,16 +49,16 @@ With Python installed see the instructions on the [Flask](http://flask.pocoo.org
 **Amazon Product Advertising API** - https://docs.aws.amazon.com/AWSECommerceService/latest/DG/ItemSearch.html
     
 ```
-    $ pip install python-amazon-product-api
+$ pip install python-amazon-product-api
 ```
     
-Note you will need to sign up as a Amazon Associate to use the API (it is free).  Once you have your credentials for the Amazon Product Advertising API you need to modify the amazon_config_file to have your specific credentials.  This files is located in the *\static\config** folder.
+Note you will need to sign up as a Amazon Associate to use the API (it is free).  Once you have your credentials for the Amazon Product Advertising API you need to modify the amazon_config_file to have your specific credentials.  This files is located in the **\static\config** folder.
 
 ```
-    [Credentials]
-    access_key = <your_access_key_here>
-    secret_key = <your_secret_key_here>
-    associate_tag = <your_associate_tag_here>
+[Credentials]
+access_key = <your_access_key_here>
+secret_key = <your_secret_key_here>
+associate_tag = <your_associate_tag_here>
  ```
 
 ### Install Peewee
@@ -66,15 +66,15 @@ Note you will need to sign up as a Amazon Associate to use the API (it is free).
 [Peewee](http://docs.peewee-orm.com/en/latest/peewee/installation.html) is a simple and small ORM written in Python built-in support for SQLite, MySQL and Postgresql.  We need this library for the write-back to our MySQL database.  If you want to use a different database then those listed above you will need to find a different ORM.
 
 ```
-    $ pip install peewee
+$ pip install peewee
 ```
 
 ### Create a target database table
 
-If you are using MySQL as your backend to this extension I have included a **db_table_creation.sql** script which will create the underlying table which saves the write-backs from the dashboard.  Run this script in your favorite MySQL client to create the table.  The script is located in the **"\sql"** folder.
+If you are using MySQL as your backend to this extension I have included a **db_table_creation.sql** script which will create the underlying table which saves the write-backs from the dashboard.  Run this script in your favorite MySQL client to create the table.  The script is located in the **\sql** folder.
 
 Next you will need to add your database credentials to the the **database_config_file** located in the **\static\config** folder.  The values you need to populate colon seperated and are as follows: 
 
 ```
-    <your_db_name>:<your_db_username>:<your_db_password>
+<your_db_name>:<your_db_username>:<your_db_password>
 ```
