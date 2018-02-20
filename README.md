@@ -35,14 +35,20 @@ pip is already installed if you're using Python 2 >=2.7.9 or Python 3 >=3.4 bina
 ### Install Flask 
     
 With Python installed see the instructions on the [Flask](http://flask.pocoo.org/) site for install or simply run:
+
     ```
     $ pip install Flask
     ```
-### Install the [Python Wrapper](https://pypi.python.org/pypi/python-amazon-product-api/) for the [Amazon Product Advertising API](https://docs.aws.amazon.com/AWSECommerceService/latest/DG/ItemSearch.html).  
+    
+### Install the Python Wrapper for the Amazon Product Advertising API 
 
+**Python Wrapper** - https://pypi.python.org/pypi/python-amazon-product-api/
+**Amazon Product Advertising API** - https://docs.aws.amazon.com/AWSECommerceService/latest/DG/ItemSearch.html
+    
     ```
     $ pip install python-amazon-product-api
     ```
+    
 Note you will need to sign up as a Amazon Associate to use the API (it is free).  Once you have your credentials for the Amazon Product Advertising API you need to modify the amazon_config_file to have your specific credentials.  This files is located in the *static\config* folder.
 
    ```
@@ -62,4 +68,12 @@ Note you will need to sign up as a Amazon Associate to use the API (it is free).
 
 ### Create a target database table
 
-If you are using MySQL as your backend to this extension I have included a db_table_creation.sql script which will create the underlying table which saves the write-backs from the dashboard.  Run this script in your favorite MySQL client to create the table.  The script is located in the *"sql"* folder
+If you are using MySQL as your backend to this extension I have included a **db_table_creation.sql** script which will create the underlying table which saves the write-backs from the dashboard.  Run this script in your favorite MySQL client to create the table.  The script is located in the **"sql"** folder.
+
+Next you will need to add your database credentials to the the **database_config_file** located in the *static\config* folder.  The values you need to populate are as follows: 
+
+    ```
+    <your_db_name>:<your_db_username>:<your_db_password>
+    ```
+    
+The values need to be seperated by a colon ":"
