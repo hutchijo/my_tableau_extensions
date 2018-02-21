@@ -18,7 +18,7 @@ This extension has **two** elements of integration:
 
 * The **second element of integration** allows you to refresh the Tableau worksheet with the products after a purchase.  In this step when a user selects **"Buy Now"** there is write-back logic which inserts the purchase into a MySQL database table.  When the write-back has been completed the extension code triggers a refresh of the underlying data source for the Worksheet. 
 
-In the following screenshot you can see both integrations in action. Notice how the product selections populate the Product Search input and then when we click "Buy Now" you can see the number of WorkForce printers goes from 13 to 18 after the purchase is completed.
+In the following screenshot you can see both integrations in action. Notice how the product selections populate the Product Search input and then when we click "Buy Now" you can see the number of printers goes from 13 to 18 after the purchase is completed.
 
 ![Image of Amazon Product Search Extension Animated](https://raw.githubusercontent.com/hutchijo/my_tableau_extensions/master/static/images/readme2.gif)
 
@@ -69,12 +69,36 @@ associate_tag = <your_associate_tag_here>
 $ pip install peewee
 ```
 
-### Create a target database table
+### Create a Target Database Table
 
-If you are using MySQL as your backend to this extension I have included a **db_table_creation.sql** script which will create the underlying table which saves the write-backs from the dashboard.  Run this script in your favorite MySQL client to create the table.  The script is located in the **\sql** folder.
+If you are using MySQL as your backend to this extension I have included a **db_table_creation.sql** script.  This script which will create the underlying table which saves the write-backs from the dashboard.  Run this script in your favorite MySQL client to create the table.  The script is located in the **\sql** folder.
 
-Next you will need to add your database credentials to the the **database_config_file** located in the **\static\config** folder.  The values you need to populate colon seperated and are as follows: 
+Next you will need to add your database credentials to the **database_config_file** located in the **\static\config** folder.  The values you need to populate are as follows: 
 
 ```
 <your_db_name>:<your_db_username>:<your_db_password>
 ```
+
+### Starting the Flask Extensions Application
+
+To start up the Flask Extensions Application navigate from a command line to the folder with the **flask_extensions.py** file.  Then type
+
+```
+python .\flask_extensions.py 
+```
+
+If all of the dependencies are installed you should see a message similar to this one:
+
+```
+ * Running on http://0.0.0.0:5013/ (Press CTRL+C to quit)
+ ```
+ 
+ The application has been started and is now accessible on port **5013**.  In a browser you should be able to navigate to the following URL - http://localhost:5013/amazon_product_search
+ 
+ ### Copy the Trex Files
+ 
+ With the Flask web application running we now need to allow for Tableau to reference the Extension in a dashboard.  To accomplish this we need to copy the corresponding trex file into the Extensions folder which is located where you installed Tableau Desktop.  The Trex files are located in this project in the **\static\trex_files** folder.  They need to be copied to the following folder **\Documents\My Tableau Repository (Beta)\Extensions**
+ 
+ Once you have copied the trex file you can open Tableau Desktop and navigate to a new dashboard.  You should see the Extensions available on the lower left of the screen. Included in this project is the **MyExtensions.twbx** workbook which utilizes the Amazon Product Search extension. 
+
+![Image of Amazon Product Search Extension](https://raw.githubusercontent.com/hutchijo/my_tableau_extensions/master/static/images/readme3.png)
