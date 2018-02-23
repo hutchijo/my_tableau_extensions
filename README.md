@@ -102,3 +102,5 @@ If all of the dependencies are installed you should see a message similar to thi
  Once you have copied the trex file you can open Tableau Desktop and navigate to a new dashboard.  You should see the Extensions available on the lower left of the screen. Included in this project is the **MyExtensions.twbx** workbook which utilizes the Amazon Product Search extension. 
 
 ![Image of Amazon Product Search Extension](https://raw.githubusercontent.com/hutchijo/my_tableau_extensions/master/static/images/readme3.png)
+
+![IMage of Adding Extensions](https://raw.githubusercontent.com/hutchijo/my_tableau_extensions/master/static/images/readme4.png)
