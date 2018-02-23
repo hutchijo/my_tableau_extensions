@@ -1,13 +1,40 @@
-{% extends "/layouts/layout.html" %}
-{% block content %}
+{% extends "/layouts/layout.html" %} {% block content %}
 <div class="container" style="width:350px;">
     <div class="box_card">
         <div style="background-color:white;border-top-right-radius: 9px;border-top-left-radius:9px">
             <div class="row" style="padding-top:5px;margin-left:5px;margin-right:10px;">
-                <div class="pull-left" style="margin-left: 15px;">
-                    <h1 class="sub_title_no_underline" style="margin-top:8px;background-color:white;"><img src="{{ url_for('static', filename='images/gear.png') }}" alt="Clock" height="36" width="36" style="position: relative; top:-5px; left: -10px;">My Tableau Extensions</h1></div>
+                <div class="pull-left" style="margin-left:15px;">
+                    <h1 class="sub_title_no_underline" style="margin-top:8px;background-color:white;"><img src="{{ url_for('static', filename='images/gear.png') }}" alt="Gear" height="36" width="36" style="position: relative; top:-5px; left: -10px;">My Tableau Extensions</h1></div>
             </div>
-        </div>        
+        </div>
+        <div class="box_body">
+            <div class="row" style="padding-top:10px;margin-left: 25px;" id="rowExtensions">                
+                <div id="divExtensions">
+                    <ul id="ulistExtensions"></ul>
+                </div>
+            </div>
+        </div>
         <div class="box_body_footer "></div>
     </div>
-</div> {% endblock %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            
+            // Get the json for the extension details
+            json_extension_details = {{ extension_details | safe }};
+                          
+            // Log a message to the console
+            console.log(json_extension_details);
+        
+            // See if we found extensions 
+            if (json_extension_details.length > 0) {
+                
+                // Loop through our extensions
+                for (var i = 0; i < json_extension_details.length; i++) {
+                    
+                    // Add to the unordered list 
+                    $('#ulistExtensions').append('<h5><li><a href="' + json_extension_details[i].extension_path+ '">' + json_extension_details[i].extension_description + '</a></li></h5>')
+                    
+                }
+            }
+        });
+    </script> {% endblock %}

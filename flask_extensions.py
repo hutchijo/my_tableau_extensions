@@ -12,6 +12,8 @@ import datetime
 import requests
 import amazon_search
 import writeback
+from lxml import etree
+from bs4 import BeautifulSoup
 from datetime import date
 from datetime import timedelta
 from collections import OrderedDict
@@ -26,7 +28,41 @@ app.permanent_session_lifetime = timedelta(seconds=600)
 
 @app.route('/')
 def home():
-    return render_template('/views/index.html')
+    
+    # Define variables
+    trex_folder = os.path.join(app.static_folder, 'trex_files')
+    full_trex_file_path = ''
+    all_extensions = []
+    my_extensions = []
+    
+    # Loop through all of our trex files
+    for file in os.listdir(trex_folder):
+        
+        # Define variables
+        extension_description  = ''
+        extension_path = ''
+        
+        # Set the full trex path 
+        full_trex_file_path = os.path.join(trex_folder, file)
+        
+        # Read in the trex files
+        handler = open(full_trex_file_path).read()
+        
+        # Use BeautifulSoup to parse the XML
+        soup = BeautifulSoup(handler, 'lxml')
+        
+        # Get the description for the extensions 
+        for description in soup.findAll('description'):
+            extension_description = description.text
+        
+        # Get the URL for the extensions 
+        for url in soup.findAll('url'):
+            extension_path = url.text
+            
+        # Append to the array of exentensions
+        all_extensions.append({"extension_description":extension_description, "extension_path":extension_path})
+            
+    return render_template('/views/index.html', extension_details = json.dumps(all_extensions))
 
 @app.route('/datasources', methods=['GET','POST'])
 def datasources():
