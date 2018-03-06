@@ -63,10 +63,19 @@ associate_tag = <your_associate_tag_here>
 
 ### Install Peewee
 
-[Peewee](http://docs.peewee-orm.com/en/latest/peewee/installation.html) is a simple and small ORM written in Python built-in support for SQLite, MySQL and Postgresql.  We need this library for the write-back to our MySQL database.  If you want to use a different database then those listed above you will need to find a different ORM.
+[Peewee](http://docs.peewee-orm.com/en/latest/peewee/installation.html) is a simple and small ORM written in Python built-in support for SQLite, MySQL and Postgresql.  We need this library for the write-back to our MySQL database.  If you want to use a different database then those listed above you will need to find a different ORM.  (I have received feedback that if you are running Python Anaconda you may get an error when installing peewee which requires uninstalling Anaconda.)
 
 ```
 $ pip install peewee
+```
+### Install Additional Dependencies
+
+The following additional dependencies are required to run this flask application:
+
+```
+$ pip install requests
+$ pip install lxml
+$ pip install bs4
 ```
 
 ### Create a Target Database Table

@@ -175,5 +175,5 @@ def page_not_found(e):
     
 # Check if the executed file is the main program and run the app
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',port='5013')
+    app.run(host='0.0.0.0',port=5013)
     
