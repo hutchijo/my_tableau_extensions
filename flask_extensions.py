@@ -82,6 +82,7 @@ def amazon_product_search():
     return_message = ''
     return_status = 'Success'
     all_products = []
+    curr_search_criteria = ''
     
     # See if this is a GET or POST
     if request.method == 'POST':
@@ -89,14 +90,20 @@ def amazon_product_search():
         # Capture the json which has our product we are searching on 
         search_criteria = request.json
         
+        # If we have a product asin use it for the search otherwise fall back to the product title
+        if (search_criteria['curr_product_asin'] == ''):
+            curr_search_criteria = search_criteria['curr_product']
+        else:
+            curr_search_criteria = search_criteria['curr_product_asin']
+            
         # Print the current status to the console
-        print ("Searching Amazon for " + search_criteria['curr_product'])
-      
+        print ("Searching Amazon for " + curr_search_criteria)
+        
         # Attempt to Make a call to the amazon product search api 
         try:
             
             # Pass in the product we are searching on and the path to the static folder which holds the config for the API
-            all_products = amazon_search.search_amazon_products(app.static_folder, search_criteria['curr_product'])
+            all_products = amazon_search.search_amazon_products(app.static_folder, curr_search_criteria)
             
             # Define the return message
             return_message = 'We found the following products on Amazon which match the provided criteria.'

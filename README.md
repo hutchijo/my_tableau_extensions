@@ -112,4 +112,4 @@ If all of the dependencies are installed you should see a message similar to thi
 
 ![Image of Amazon Product Search Extension](https://raw.githubusercontent.com/hutchijo/my_tableau_extensions/master/static/images/readme3.png)
 
-![IMage of Adding Extensions](https://raw.githubusercontent.com/hutchijo/my_tableau_extensions/master/static/images/readme4.png)
+![Image of Adding Extensions](https://raw.githubusercontent.com/hutchijo/my_tableau_extensions/master/static/images/readme4.png)

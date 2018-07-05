@@ -94,5 +94,19 @@ def save_product_to_database(all_product_info, product_quantity):
 
             # Print the exception to the console
             print ex 
+            
+            print 'product_asin = ' + product["product_asin"] 
+            print 'product_mpn = ' + product["product_mpn"]
+            print 'product_title = ' +  product["product_title"][1:-1]
+            print 'product_manufacturer = ' +  product["product_manufacturer"]
+            print 'product_brand  = ' +  product["product_brand"]
+            print 'product_package_quantity= ' + product["product_package_quantity"]
+            print 'product_color = ' +  product["product_color"]
+            print 'product_size = ' +  product["product_size"]
+            print 'product_price = ' +  product["product_price"]
+            print 'product_group = ' +  product["product_group"]
+            print 'product_image = ' +  product["product_image"][2:-1]
+            print 'product_description = ' +  product["product_description"].replace("'", "")
+            print 'quantity_purchased = ' +  str(product_quantity)
 
         

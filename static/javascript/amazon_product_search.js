@@ -42,11 +42,12 @@ $(document).ready(function () {
         // Check for a product
         if ($("#curr_product").val() != '') {
 
-            // Set the label for the current date
+            // Get the value for the current product
             curr_product = $('#curr_product').val();
-
+            curr_product_asin = $('#curr_product_asin').val();
+            
             // Call the function that runs the product search
-            runAjaxProductSearch(curr_product, 'multi_search');
+            runAjaxProductSearch(curr_product, 'multi_search', curr_product_asin);
         }
         else {
 
@@ -116,7 +117,7 @@ function getSelectedMarks(worksheetName){
     try
     {
         // Log a message to the console
-        console.log('Attmepting to get the selected marks.');
+        console.log('Attempting to get the selected marks.');
 
         // Get the worksheet
         worksheet = getSelectedSheet(worksheetName);
@@ -135,17 +136,21 @@ function getSelectedMarks(worksheetName){
                 
                  // Set the current product to be empty
                 $("#curr_product").val('');    
+                $("#curr_product_asin").val('');    
             }
             else
             {
                 // Get the first product selected
-                var curr_product = worksheetData.data[0][0].formattedValue;
+                var curr_product = worksheetData.data[0][1].formattedValue; // product title
+                var curr_product_asin = worksheetData.data[0][0].formattedValue; // product asin
+                var curr_product_qty= worksheetData.data[0][2].formattedValue; // quantity
                 
                 // Log a message to the console
                 console.log('Setting the product to search for to be ' + curr_product);
                 
                 // Set the current product for the input value
                 $("#curr_product").val(curr_product);    
+                $("#curr_product_asin").val(curr_product_asin);    
             }
         });
     }
@@ -160,7 +165,7 @@ function getSelectedMarks(worksheetName){
 function productDetails(product_asin)
 {
     // Perform the Search again with just the ASIN
-    runAjaxProductSearch(product_asin, 'single_search');
+    runAjaxProductSearch(product_asin, 'single_search', '');
 
     // Hide the Product Search Capabilities                
     $('#rowProduct').hide();
@@ -209,7 +214,8 @@ function buyNow(curr_product)
                 // Clear out the existing search results as we completed the purchase
                 $('#div_search_results').empty();
                 $('#curr_product').val(''); 
-
+                $('#curr_product_asin').val(''); 
+                
                 $('#divAlert').text('Please provide a product to search for on Amazon.');
                 $('#divAlert').addClass("alert-warning");
                 $('#divAlert').removeClass("alert-success");
@@ -224,11 +230,11 @@ function buyNow(curr_product)
 }
 
 // Function to run the Ajax Product Search
-function runAjaxProductSearch(curr_product, search_type)
+function runAjaxProductSearch(curr_product, search_type, curr_product_asin)
 {
       // Create a variable for the search criteria
       search_criteria = JSON.stringify({
-          curr_product
+          curr_product, curr_product_asin
       });
 
         // Using AJAX post to Search
@@ -337,6 +343,11 @@ function loop_json(my_json, target_table, search_type) {
     }
 
 }
+
+// Function to clear out the product asin when the product title changes
+$("#curr_product").change(function(){
+    $("#curr_product_asin").val('');
+});
 
 // Function to cancel the purchase and reload the page
 function cancelPurchase()
