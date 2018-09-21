@@ -17,6 +17,7 @@ from bs4 import BeautifulSoup
 from datetime import date
 from datetime import timedelta
 from collections import OrderedDict
+from tableaudocumentapi import Datasource, Workbook
 from flask import Flask, render_template, json, jsonify, request, redirect, url_for, abort, session, app
 from flask_restful import reqparse
 
@@ -64,14 +65,69 @@ def home():
             
     return render_template('/views/index.html', extension_details = json.dumps(all_extensions))
 
-@app.route('/datasources', methods=['GET','POST'])
-def datasources():
-    return render_template('/views/datasources.html')
+@app.route('/prep_scheduler', methods=['GET','POST'])
+def prep_scheduler():
+    return render_template('/views/prep_scheduler.html')
 
-@app.route('/filtering', methods=['GET','POST'])
-def filtering():
-    return render_template('/views/filtering.html')
+@app.route('/amazon_configure', methods=['GET','POST'])
+def amazon_configure():
+    return render_template('/views/amazon_configure.html')
 
+@app.route('/workbook_analyzer', methods=['GET','POST'])
+def workbook_analyzer():
+    
+    # Define variables
+    return_message = ''
+    
+    # See if this is a GET or POST
+    if request.method == 'POST':
+        
+        # Capture the json which has the workbook we will analyze
+        search_criteria = request.json
+        
+        # Log a message to the console
+        print search_criteria
+        
+        # Get the workbook we will analyze
+        curr_workbook = Workbook('C:\Users\JHutchison\Downloads\InjuryAnalysis.twbx')
+        
+        # Get all of the sources in this workbook
+        all_sources = curr_workbook.datasources
+        
+        # Loop through the datasources in the workbook
+        for count, datasource in enumerate(all_sources):
+            
+            # Print the workbook name
+            
+            # Print the datasource name (caption)
+            print datasource.caption
+            
+            # Print the number of fields in the data source
+            print '{} total fields in your data source'.format(len(datasource.fields))
+            
+            # Loop through the fields in the datasource
+            for count, field in enumerate(datasource.fields.values()):
+            
+                print str(field.id) + ' ' + str(field.caption) + ' ' + str(field.datatype) + ' ' + str(field.role) + ' ' + str(field.alias)
+
+                if field.calculation:
+                    print('      the formula is {}'.format(field.calculation))
+
+                if field.default_aggregation:
+                    print('      the default aggregation is {}'.format(field.default_aggregation))
+
+                if field.description:
+                    print('      the description is {}'.format(field.description))
+
+        # Return the status of the operation
+        return jsonify(return_message)
+    
+    else:
+        
+         # Render the html page for the workbook analyzer as this action is a GET
+        return render_template('/views/workbook_analyzer.html')
+
+    
 @app.route('/amazon_product_search', methods=['GET','POST'])
 def amazon_product_search():
     
@@ -142,7 +198,7 @@ def amazon_product_search():
         
         # Render the html page for the product search as this action is a GET
         return render_template('/views/amazon_product_search.html')
-
+    
 @app.route('/writeback_to_db', methods=['GET','POST'])
 def writeback_to_db():
     
@@ -160,14 +216,14 @@ def writeback_to_db():
         writeback_data = request.json
         
         # Get the data on the single product we will save to the database
-        all_product_info = amazon_search.search_amazon_products(app.static_folder, writeback_data['curr_product'])
+        all_product_info = amazon_search.search_amazon_products(app.static_folder, writeback_data['curr_product_asin'])
         
         # Call the function that will handle the writeback to the database
-        writeback.save_product_to_database(all_product_info, writeback_data['product_quantity'])
+        writeback.save_product_to_database(all_product_info, writeback_data['curr_product_quantity'])
         
         # Send a message back to the user regarding the status of the writeback
         return jsonify(return_message, return_status)
-        
+
 @app.errorhandler(403)
 def page_not_found(e):
     return render_template('/views/403.html'), 403

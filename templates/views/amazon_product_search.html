@@ -4,27 +4,31 @@
         <div style="background-color:white;border-top-right-radius: 9px;border-top-left-radius:9px">
             <div class="row" style="padding-top:5px;margin-left:5px;margin-right:10px;">
                 <div class="pull-left" style="margin-left: 15px;">
-                    <h1 class="sub_title_no_underline" style="margin-top:8px;background-color:white;"><img src="{{ url_for('static', filename='images/gear.png') }}" alt="Clock" height="36" width="36" style="position: relative; top:-5px; left: -10px;">Amazon Product Search</h1></div>
+                    <h1 class="sub_title_no_underline" style="margin-top:8px;background-color:white;"><img src="{{ url_for('static', filename='images/gear.png') }}" alt="Gear" height="36" width="36" style="position: relative; top:-5px; left: -10px;">Amazon Product Search</h1></div>
             </div>
         </div>
         <div class="box_body">
             <div id="divSuccess" class="alert alert-success" style="width:auto;margin-left: 25px;margin-right: 25px;display:none;"></div>
             <div id="divAlert" class="alert alert-warning" style="width:auto;margin-left: 25px;margin-right: 25px;">Please provide a product to search for on Amazon.</div>
+            <div id="divInfo" class="alert alert-info" style="width:auto;margin-left: 25px;margin-right: 25px;display:none;"></div>
             <div class="row" style="padding-top:5px;" id="rowProductLabel">
                 <div class="col-md-3">
                     <h5 class="control-label" style="display:inline;margin-left: 25px;margin-right:5px;">Product:</h5></div>
             </div>
             <div class="row" style="padding-top:5px;" id="rowProduct">
                 <div class="col-md-3">
-                    <input name="curr_product" id="curr_product" class="form-control" placeholder="Product to Search" autofocus="" autocomplete="off" style="background-position: 98% 50%; cursor: pointer;width: 200px;margin-left: 25px;">
-                    <input name="curr_product_asin" id="curr_product_asin" class="form-control" style="display:none;background-position: 98% 50%; cursor: pointer;width: 200px;margin-left: 25px;">
+                    <input name="curr_product" id="curr_product" class="form-control" placeholder="Product to Search" autofocus="" autocomplete="off" style="background-position: 98% 50%; cursor: pointer;width: 200px;margin-left: 25px;">                    
+                    <input name="curr_product_asin" id="curr_product_asin" class="form-control" style="background-position: 98% 50%; cursor: pointer;width: 200px;margin-left: 25px;display:none;">
+                    <input name="curr_product_last_order_date" id="curr_product_last_order_date" class="form-control" style="background-position: 98% 50%; cursor: pointer;width: 200px;margin-left: 25px;display:none;">
+                    <input name="curr_product_avg_price" id="curr_product_avg_price" class="form-control" style="background-position: 98% 50%; cursor: pointer;width: 200px;margin-left: 25px;display:none;">                    
                 </div>
             </div>
             <div class="row" style="padding-top:15px;margin-left:0px;" id="rowSearchButton">
-                    <button id="searchButton" class="btn bt-login text-center" type="button" style="width:auto;margin-left: 25px;margin-right: 10px;"><span style="position: relative; top: -2px;">Search</span><i class="fa fa-search" style="display:inline;font-size:20px; color:white;padding-left:7px;"></i></button>
-                    &nbsp;<img src="{{ url_for('static', filename='images/ajax-loader.gif') }}" alt="Loading" height="28" width="28" id="loader" style="display:none;">
+                    <button id="searchButton" class="btn btn-login_small btn-sm text-center" type="button" style="margin-left: 25px;">Search&nbsp;<i class="fa fa-search" style="display:inline;font-size:15px; color:white;padding-left:2px;"></i></button>
+                    <button id="clearSearchButton" class="btn btn-login_small btn-sm text-center" type="button" style="margin-left:7px;">Clear&nbsp;<i class="fa fa-times" style="display:inline;font-size:15px; color:white;padding-left:2px;"></i></button>
+                    &nbsp;&nbsp;<img src="{{ url_for('static', filename='images/ajax-loader.gif') }}" alt="Loading" height="24" width="24" id="loader" style="display:none;">
             </div>
-            <div style="padding-top:20px;display:none;" id="div_search_results">
+            <div style="display:none;" id="div_search_results">
              
             </div>
         </div>

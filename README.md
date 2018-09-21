@@ -39,7 +39,7 @@ pip is already installed if you're using Python 2 >=2.7.9 or Python 3 >=3.4 bina
 With Python installed see the instructions on the [Flask](http://flask.pocoo.org/) site for install or simply run:
 
 ```
-$ pip install Flask
+$ pip install flask
 ```
     
 ### Install the Python Wrapper for the Amazon Product Advertising API 

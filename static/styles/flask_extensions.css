@@ -1,7 +1,7 @@
 /** hero-large.jpg **/
 
 body {
-    background: url('/static/images/ldscp_pattern.jpg') no-repeat center center fixed;
+    /** background: url('/static/images/ldscp_pattern.jpg') no-repeat center center fixed;**/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -238,7 +238,7 @@ a {
     height: auto;
     border-radius: 9px;
     padding: 0px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 3px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 4px rgba(0, 0, 0, 0.19);
 }
 
 .box_card_small {
@@ -260,15 +260,14 @@ a {
 }
 
 .box_body {
-    background-color: #ffffff;
+    background-color: white;
     color: black;
     padding: 0px;
     padding-bottom: 15px;
 }
 
 .box_body_footer {
-    background-color: #ffffff;
-    background-color: #ffffff;
+    background-color: white;
     color: black;
     padding: 0px;
     border-bottom-right-radius: 9px;
@@ -278,7 +277,7 @@ a {
 
 @media (min-width: 320px) and (max-width: 1023px) {
     body {
-        background: url('/static/images/ldscp_pattern.jpg') no-repeat center center fixed;
+        /** background: url('/static/images/ldscp_pattern.jpg') no-repeat center center fixed; **/
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -286,13 +285,10 @@ a {
         background-color: #fff;
     }
 }
-
-
-/** hero-medium.jpg **/
 
 @media (min-width: 1024px) and (max-width: 1360px) {
     body {
-        background: url('/static/images/ldscp_pattern.jpg') no-repeat center center fixed;
+        /** background: url('/static/images/ldscp_pattern.jpg') no-repeat center center fixed; **/
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -301,12 +297,9 @@ a {
     }
 }
 
-
-/** hero-large.jpg **/
-
 @media (min-width: 1361px) and (max-width: 1960px) {
     body {
-        background: url('/static/images/ldscp_pattern.jpg') no-repeat center center fixed;
+        /** background: url('/static/images/ldscp_pattern.jpg') no-repeat center center fixed; **/ 
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;

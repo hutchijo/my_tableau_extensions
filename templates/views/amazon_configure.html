@@ -1,0 +1,22 @@
+{% extends "/layouts/layout.html" %} {% block content %}
+<div class="container" style="width:350px;">
+    <div class="box_card">
+        <div style="background-color:white;border-top-right-radius: 9px;border-top-left-radius:9px">
+            <div class="row" style="padding-top:5px;margin-left:5px;margin-right:10px;">
+                <div class="pull-left" style="margin-left: 15px;">
+                    <h1 class="sub_title_no_underline" style="margin-top:8px;background-color:white;"><img src="{{ url_for('static', filename='images/gear.png') }}" alt="Gear" height="36" width="36" style="position: relative; top:-5px; left: -10px;">Configure the Extension</h1></div>
+            </div>
+        </div>
+        <div class="box_body">
+             <div id="divAlert" class="alert alert-warning" style="width:auto;margin-left: 25px;margin-right: 25px;">Select the sheet you want to the Product Search to interact with.</div>            
+            <div style="padding-top:5px;" id="rowWorksheets">
+            </div>
+            <div class="row" style="padding-top:15px;margin-left:0px;" id="rowSaveButton">
+                    <button id="saveButton" class="btn btn-login_small btn-sm text-center" type="button" style="margin-left: 25px;">Save&nbsp;<i class="fa fa-save" style="display:inline;font-size:15px; color:white;padding-left:2px;"></i></button>
+            </div>
+        </div>
+        <div class="box_body_footer "></div>
+    </div>
+</div>
+<script src="{{ url_for('static',filename='javascript/amazon_configure.js') }}"></script>
+{% endblock %}
