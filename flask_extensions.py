@@ -17,7 +17,6 @@ from bs4 import BeautifulSoup
 from datetime import date
 from datetime import timedelta
 from collections import OrderedDict
-from tableaudocumentapi import Datasource, Workbook
 from flask import Flask, render_template, json, jsonify, request, redirect, url_for, abort, session, app
 from flask_restful import reqparse
 
