@@ -79,7 +79,6 @@ $ pip install bs4
 $ pip install flask_restful
 $ pip install pymysql
 ```
-TEST123
 ### Create a Target Database Table
 
 If you are using MySQL as your backend to this extension I have included a **db_table_creation.sql** script.  This script which will create the underlying table which saves the write-backs from the dashboard.  Run this script in your favorite MySQL client to create the table.  The script is located in the **\sql** folder.
