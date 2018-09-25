@@ -77,6 +77,7 @@ $ pip install requests
 $ pip install lxml
 $ pip install bs4
 $ pip install flask_restful
+$ pip install pymysql
 ```
 
 ### Create a Target Database Table

@@ -12,6 +12,7 @@ import datetime
 import requests
 import amazon_search
 import writeback
+import logging
 from lxml import etree
 from bs4 import BeautifulSoup
 from datetime import date
@@ -132,6 +133,7 @@ def amazon_product_search():
     
     # Print the current status to the console
     print ('Amazon Product Search Started...')
+    app.logger.info('Amazon Product Search Started...')
     
     # Define variables
     return_message = ''
@@ -203,7 +205,7 @@ def writeback_to_db():
     
     # Print the current status to the console
     print ('Database Writeback Started...')
-    
+        
     # Define variables
     return_message = ''
     return_status = 'Success'
@@ -237,5 +239,11 @@ def page_not_found(e):
     
 # Check if the executed file is the main program and run the app
 if __name__ == "__main__":
+    
+    # Setup logging for our application
+    logging.basicConfig(filename='my_tableau_extensions.log',level=logging.DEBUG)
+
+    # Run the app on the localhost with the specified port
     app.run(host='0.0.0.0',port=5013)
+    
     

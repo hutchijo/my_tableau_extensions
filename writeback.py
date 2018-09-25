@@ -2,6 +2,7 @@ import os
 import sys
 import datetime
 import peewee
+import logging
 from peewee import *
 from flask import json, jsonify
 
@@ -131,6 +132,7 @@ def save_product_to_database(all_product_info, product_quantity):
 
             # Print the exception to the console
             print ex 
+            logging.info('A writeback error has occured.')
             
             print 'product_asin = ' + product["product_asin"] 
             print 'product_mpn = ' + product["product_mpn"]
