@@ -598,3 +598,81 @@ a {
     margin-top: 10px
 }
 
+
+* {
+  padding: 0;
+  margin: 0;
+  cursor: default;
+  color:#333;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 900px;
+  min-width: 300px;
+}
+.row {
+  width:100%;
+  overflow: none;
+}
+.column {
+  float:left;
+  width: 50%;
+}
+.connected-sortable {
+  margin: 0 auto;
+  list-style: none;
+  width: 90%;
+}
+
+/* Drag and Drop List Items */
+.ui-sortable {
+	background-color: #ffffff;
+    list-style-type: none; 
+    padding: 0; 
+    width: 300px;
+}
+.ui-sortable li.ui-state-default { 
+    height: 30px;
+    margin-left: 20px; 
+    margin-right: 20px; 
+    padding-bottom: 6px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    border-radius: 3px 3px 3px 3px;
+    background-position: 15px center;
+    background-repeat: no-repeat;
+    background-color: #ff8627;
+    color: #ffffff;
+    text-align: left;
+    transition: background-color 300ms linear 0s;
+}
+.ui-sortable li.ui-state-default:first-child {
+	border-top: 0; 
+}
+.ui-sortable li.ui-state-default:last-child {
+	border-bottom: 0;
+}
+
+.ui-sortable-placeholder {
+	border: 3px dashed #aaa;
+	height: 30px;
+    padding-bottom: 6px;
+    margin-left: 20px; 
+    margin-right: 20px; 
+	background: #ffffff;
+}
+.ui-sortable li.ui-state-default:after {
+	content: "\f0c9";
+	display: inline-block;
+	font-family: "FontAwesome";
+	position: absolute;
+	right: 18px;
+	top: 9px;
+	text-align: left;
+	line-height: 35px;
+	color: rgba(255,255,255,.2);
+	text-shadow: 0px 0px 0px rgba(0,0,0,0);
+	cursor: move;
+}

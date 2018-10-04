@@ -98,6 +98,6 @@ def search_amazon_products(static_folder, search_keywords):
             
             # Print the error message 
             print  '    Skipping this product - ' + str(ex)
-            
+                
     # Return all of the products found
     return all_products

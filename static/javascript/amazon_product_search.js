@@ -121,7 +121,7 @@ function configure(curr_worksheet_name)
     const popupUrl = window.location.origin + '/amazon_configure';
     
     // Open the modal popup for configuring this extension
-    tableau.extensions.ui.displayDialogAsync(popupUrl, null, { height: 345, width: 300 });
+    tableau.extensions.ui.displayDialogAsync(popupUrl, null, { height: 367, width: 300 });
     
 }
 
@@ -552,7 +552,7 @@ function loop_json(my_json, target_table, search_type) {
                         price_difference = (curr_product_avg_price - curr_product_price).toFixed(2);
                         
                         // Update our text to reflect the total savings
-                        potential_savings_text =  potential_savings_text + '<font color="green" style=font-weight:bold;">$'  + price_difference + '</font> less than the average purchase price.';
+                        potential_savings_text =  potential_savings_text + '<font style=font-weight:bold;color:green;">$'  + price_difference + '</font> less than the average purchase price.';
                     }
                     else if  (curr_product_avg_price == curr_product_price)
                     {
@@ -566,7 +566,7 @@ function loop_json(my_json, target_table, search_type) {
                         price_difference = (curr_product_price - curr_product_avg_price).toFixed(2);
                         
                         // Update our text to reflect the total savings
-                        potential_savings_text =  potential_savings_text + '<font color="red" style=font-weight:bold;">$'  + price_difference +'</font> more than the average purchase price.';
+                        potential_savings_text =  potential_savings_text + '<font style=font-weight:bold;color:red;">$'  + price_difference +'</font> more than the average purchase price.';
                     }
                     
                     // Append the data to the table

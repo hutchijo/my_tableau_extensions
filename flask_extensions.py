@@ -65,10 +65,29 @@ def home():
             
     return render_template('/views/index.html', extension_details = json.dumps(all_extensions))
 
+
 @app.route('/prep_scheduler', methods=['GET','POST'])
 def prep_scheduler():
     return render_template('/views/prep_scheduler.html')
 
+@app.route('/exporter', methods=['GET','POST'])
+def exporter():
+    
+    # Print the current status to the console
+    print ('Export To File Started...')
+    logger.info("Export To File Started...") 
+    
+    # See if this is a GET or POST
+    if request.method == 'POST':
+    
+        # Define variables
+        return_message = ''
+    
+    else:
+    
+        # Render the html page for the exporter as this action is a GET
+        return render_template('/views/exporter.html')
+    
 @app.route('/amazon_configure', methods=['GET','POST'])
 def amazon_configure():
     return render_template('/views/amazon_configure.html')
@@ -128,12 +147,13 @@ def workbook_analyzer():
         return render_template('/views/workbook_analyzer.html')
 
     
+
 @app.route('/amazon_product_search', methods=['GET','POST'])
 def amazon_product_search():
     
     # Print the current status to the console
     print ('Amazon Product Search Started...')
-    app.logger.info('Amazon Product Search Started...')
+    logger.info("Amazon Product Search Started...") 
     
     # Define variables
     return_message = ''
@@ -155,7 +175,8 @@ def amazon_product_search():
             
         # Print the current status to the console
         print ("Searching Amazon for " + curr_search_criteria)
-        
+        logger.info("Searching Amazon for " + curr_search_criteria)
+            
         # Attempt to Make a call to the amazon product search api 
         try:
             
@@ -170,6 +191,7 @@ def amazon_product_search():
             
             # Display an error to the console
             print (ex)
+            logger.error(ex)
             
             # Handle AWS error messages
             if "AWS.ECommerceService.NoExactMatches" in str(ex):
@@ -191,7 +213,8 @@ def amazon_product_search():
                 
             # Display an error to the console
             print (return_message)
-
+            logger.error (return_message)
+            
         # Return the status of the operation
         return jsonify(return_message, return_status, all_products)
 
@@ -200,11 +223,13 @@ def amazon_product_search():
         # Render the html page for the product search as this action is a GET
         return render_template('/views/amazon_product_search.html')
     
+
 @app.route('/writeback_to_db', methods=['GET','POST'])
 def writeback_to_db():
     
     # Print the current status to the console
     print ('Database Writeback Started...')
+    logger.info ('Database Writeback Started...')
         
     # Define variables
     return_message = ''
@@ -241,8 +266,10 @@ def page_not_found(e):
 if __name__ == "__main__":
     
     # Setup logging for our application
-    logging.basicConfig(filename='my_tableau_extensions.log',level=logging.DEBUG)
-
+    logging.basicConfig(filename='my_tableau_extensions.log',format='%(levelname)s %(message)s', filemode='w')
+    logger = logging.getLogger()
+    logger.setLevel(logging.INFO) 
+        
     # Run the app on the localhost with the specified port
     app.run(host='0.0.0.0',port=5013)
     
